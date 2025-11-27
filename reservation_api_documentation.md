@@ -1,4 +1,4 @@
-# API Dokumentáció -- reservationkisuj Copy
+# API Dokumentáció -- reservationkisuj
 
 ## Áttekintés
 
@@ -36,10 +36,10 @@ Alapértelmezett: `https://template.postman-echo.com`
 
 ``` json
 {
-  "name": "Patrik",
-  "email": "patrik@gmail.com",
-  "password": "Nemtudom20",
-  "password_confirmation": "Nemtudom20"
+  "name": "Mihály",
+  "email": "mihaly@gmail.com",
+  "password": "Jelszo12",
+  "password_confirmation": "Jelszo12"
 }
 ```
 
@@ -63,8 +63,8 @@ Alapértelmezett: `https://template.postman-echo.com`
 
 ``` json
 {
-  "email": "patrik@gmail.com",
-  "password": "Nemtudom20"
+  "email": "mihaly@gmail.com",
+  "password": "Jelszo12"
 }
 ```
 
@@ -147,7 +147,7 @@ Ugyanaz mint fent.
 {
   "reservation_time": "2025-10-02 18:43:30",
   "guests": "4",
-  "note": "valami de az nagyon"
+  "note": "Születésnapi tortát hozunk, hűtést igényel."
 }
 ```
 
@@ -171,7 +171,7 @@ Ugyanaz mint fent.
 {
   "reservation_time": "2025-10-02 18:43:30",
   "guests": "4",
-  "note": "valami de az asd"
+  "note": "Születésnapi tortát hozunk, hűtést igényel."
 }
 ```
 
@@ -189,7 +189,7 @@ Ugyanaz mint fent.
 
 ``` json
 {
-  "note": "valami de az igen"
+  "note": "Születésnapi tortát hozunk, hűtést igényel."
 }
 ```
 
@@ -220,5 +220,3 @@ Ugyanaz mint fent.
 -   Frissítsd a Postman környezeti változókat a megfelelő működéshez.
 
 ------------------------------------------------------------------------
-
-Automatikusan generált dokumentáció.
