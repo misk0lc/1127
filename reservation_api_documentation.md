@@ -1,36 +1,38 @@
-# API Documentation -- reservationkisuj Copy
+# API Dokumentáció -- reservationkisuj Copy
 
-## Overview
+## Áttekintés
 
-This REST API collection supports basic authentication (registration,
-login, logout) and full CRUD operations for **reservations**.\
-The documentation below explains each endpoint, its method, required
-headers, request body, and expected responses.
+Ez a REST API gyűjtemény támogatja az alapvető autentikációs
+folyamatokat (regisztráció, bejelentkezés, kijelentkezés), valamint a
+**foglalások (reservations)** teljes CRUD kezelését.
+
+Az alábbi dokumentáció ismerteti az összes végpontot, a szükséges HTTP
+metódusokat, headereket, kérés törzsét és a várható válaszokat.
 
 ------------------------------------------------------------------------
 
-## Base URL
+## Alap URL
 
     {{base_url}}
 
-Default: `https://template.postman-echo.com`
+Alapértelmezett: `https://template.postman-echo.com`
 
 ------------------------------------------------------------------------
 
-# Authentication Endpoints
+# Autentikációs végpontok
 
 ------------------------------------------------------------------------
 
-## 1. **Register**
+## 1. **Regisztráció**
 
 **POST** `/register`
 
-### Headers
+### Headerek
 
     Accept: application/json
     Content-Type: application/json
 
-### Body (JSON)
+### Törzs (JSON)
 
 ``` json
 {
@@ -41,23 +43,23 @@ Default: `https://template.postman-echo.com`
 }
 ```
 
-### Response
+### Válasz
 
--   `201 Created` or `200 OK`\
-    Returns user data and authentication token.
+-   `201 Created` vagy `200 OK`\
+    A felhasználót és az auth tokent adja vissza.
 
 ------------------------------------------------------------------------
 
-## 2. **Login**
+## 2. **Bejelentkezés**
 
 **POST** `/login`
 
-### Headers
+### Headerek
 
     Accept: application/json
     Content-Type: application/json
 
-### Body
+### Törzs
 
 ``` json
 {
@@ -66,79 +68,80 @@ Default: `https://template.postman-echo.com`
 }
 ```
 
-### Response
+### Válasz
 
 -   `200 OK`\
-    Returns authentication token.
+    Tokennel tér vissza.
 
 ------------------------------------------------------------------------
 
-## 3. **Logout**
+## 3. **Kijelentkezés**
 
 **POST** `/logout`
 
-### Headers
+### Headerek
 
     Accept: application/json
     Content-Type: application/json
     Authorization: Bearer <token>
 
-### Response
+### Válasz
 
 -   `200 OK`\
-    User logged out.
+    Sikeres kijelentkezés.
 
 ------------------------------------------------------------------------
 
-# Reservation Endpoints
+# Foglalások végpontjai
 
 ------------------------------------------------------------------------
 
-## 4. **List All Reservations**
+## 4. **Összes foglalás lekérése**
 
 **GET** `/reservations`
 
-### Headers
+### Headerek
 
     Accept: application/json
     Content-Type: application/json
     Authorization: Bearer <token>
 
-### Response
+### Válasz
 
--   `200 OK` Returns all reservations.
+-   `200 OK`\
+    Visszaadja az összes foglalást.
 
 ------------------------------------------------------------------------
 
-## 5. **Get One Reservation**
+## 5. **Egy foglalás lekérése**
 
 **GET** `/reservations/{id}`
 
-### Example
+### Példa
 
 `/reservations/2`
 
-### Headers
+### Headerek
 
-Same as above.
+Ugyanaz mint fent.
 
-### Response
+### Válasz
 
 -   `200 OK`
 
 ------------------------------------------------------------------------
 
-## 6. **Create New Reservation**
+## 6. **Új foglalás létrehozása**
 
 **POST** `/reservations`
 
-### Headers
+### Headerek
 
     Accept: application/json
     Content-Type: application/json
     Authorization: Bearer <token>
 
-### Body
+### Törzs
 
 ``` json
 {
@@ -148,21 +151,21 @@ Same as above.
 }
 ```
 
-### Response
+### Válasz
 
--   `201 Created` or `200 OK`
+-   `201 Created` vagy `200 OK`
 
 ------------------------------------------------------------------------
 
-## 7. **Update Reservation (Full Update)**
+## 7. **Foglalás módosítása (teljes frissítés)**
 
 **PUT** `/reservations/{id}`
 
-### Example
+### Példa
 
 `/reservations/11`
 
-### Body
+### Törzs
 
 ``` json
 {
@@ -172,17 +175,17 @@ Same as above.
 }
 ```
 
-### Response
+### Válasz
 
 -   `200 OK` / `204 No Content`
 
 ------------------------------------------------------------------------
 
-## 8. **Update Reservation (Partial)**
+## 8. **Foglalás részleges módosítása**
 
 **PATCH** `/reservations/{id}`
 
-### Body
+### Törzs
 
 ``` json
 {
@@ -192,31 +195,30 @@ Same as above.
 
 ------------------------------------------------------------------------
 
-## 9. **Delete Reservation**
+## 9. **Foglalás törlése**
 
 **DELETE** `/reservations/{id}`
 
-### Response
+### Válasz
 
 -   `200 OK` / `204 No Content`
 
 ------------------------------------------------------------------------
 
-# Variables
+# Postman változók
 
-  Key          Value
+  Kulcs        Érték
   ------------ -------------------------------------
   `id`         `1`
   `base_url`   `https://template.postman-echo.com`
 
 ------------------------------------------------------------------------
 
-# Notes
+# Megjegyzések
 
--   All reservation routes require a valid **Bearer token**.
--   Make sure to update Postman environment variables before sending
-    requests.
+-   A foglalási végpontok mindegyike érvényes **Bearer tokent** igényel.
+-   Frissítsd a Postman környezeti változókat a megfelelő működéshez.
 
 ------------------------------------------------------------------------
 
-Generated automatically.
+Automatikusan generált dokumentáció.
